@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Colorbox</title>
+	<link rel="stylesheet" href="colorbox-master/colorbox-master/example2/colorbox.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="colorbox-master/colorbox-master/jquery.colorbox.js"></script>
+	<script>
+			$(document).ready(function(){
+				//Examples of how to assign the Colorbox event to elements
+				$(".group1").colorbox({rel:'group1'});
+				$(".group2").colorbox({rel:'group2', transition:"fade"});
+				$(".group3").colorbox({rel:'group3', transition:"none", width:"75%", height:"75%"});
+				$(".group4").colorbox({rel:'group4', slideshow:true});
+				$(".ajax").colorbox();
+				$(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+				$(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:409});
+				$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+				$(".inline").colorbox({inline:true, width:"50%"});
+				$(".callbacks").colorbox({
+					onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+					onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+					onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+					onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+					onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+				});
+
+				$('.non-retina').colorbox({rel:'group5', transition:'none'})
+				$('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+				
+				//Example of preserving a JavaScript event for inline calls.
+				$("#click").click(function(){ 
+					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+					return false;
+				});
+			});
+		</script>
+    <style>
+    	body{
+    		margin-top: 0;
+    		text-align: center;
+    		background-color: #313131;
+    	}
+
+    	a:link, a:visited{
+    		text-decoration: none;
+    		color: black;
+    		border-bottom: 1px solid black;
+    	}
+    	.sub1{
+    		display: inline-block;
+    		width: 80%;
+    		height: 500px;
+    		background-image: url('imagenes/Background1.jpg')
+    	}
+
+    	.sub2{
+    		display: inline-block;
+    		width: 80%;
+    		height: 500px;
+    		margin-top: 5%;
+    		background-image: url('imagenes/Background2.png') ;
+    	}
+    	.contenido{
+    		background-color: rgba(255,255,255, 50%);
+    	}
+
+    	p{
+    		font-size: 30px;
+    		 
+    	}
+
+    	h2{
+    		text-transform: uppercase;
+    		background-color: rgba(255,255,255, 50%); 
+    		width: auto;
+    	}
+
+    	h1{
+    		font-size: 100px;
+    		color: #E2E2E2;
+    	}
+    </style>
+</head>
+<body>
+	
+<div class="main">
+	<h1>Colorbox</h1>
+	<div class="sub1">
+		<h2>Imagenes</h2>
+		<div class="contenido">
+		<p>
+			<a class="group3 cboxElement" href="imagenes/KH1.jpg" title="Kingdom Hearts">I</a>
+		</p>
+    	<p>
+    		<a class="group3 cboxElement" href="imagenes/KH2.jpg" title="Kingdom Hearts II">II</a>
+    	</p>
+    	<p>
+    		<a class="group3 cboxElement" href="imagenes/KH3.jpg" title="Kingdom Hearts III">III</a>
+    	</p>
+    	</div>
+	</div>
+
+	<div class="sub2">
+		<h2>Video</h2>
+		<div class="contenido">
+    	<p>
+    		<a class="youtube cboxElement" href="https://www.youtube.com/embed/Bd61A8egZX4?rel=0&wmode=transparent">Dearly Beloved</a>
+    	</p>
+    	</div>
+
+    </div>
+
+</div>
+
+    <div style="display:none">
+			<div id="inline_content" style="padding:10px; background:#fff;">
+			<p><strong>This content comes from a hidden element on this page.</strong></p>
+			<p>The inline option preserves bound JavaScript events and changes, and it puts the content back where it came from when it is closed.</p>
+			<p><a id="click" href="#" style="padding:5px; background:#ccc;">Click me, it will be preserved!</a></p>
+			
+			<p><strong>If you try to open a new Colorbox while it is already open, it will update itself with the new content.</strong></p>
+			<p>Updating Content Example:<br>
+			<a class="ajax cboxElement" href="../content/ajax.html">Click here to load new content</a></p>
+			</div>
+	</div>
+	<div id="cboxOverlay" style="opacity: 0; cursor: pointer; visibility: visible; display: none;"></div>
+
+	<div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none; visibility: visible; top: 233px; left: 0px; position: absolute; width: 702px; height: 477px; opacity: 0;"><div id="cboxWrapper" style="height: 477px; width: 702px;"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left; width: 702px;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left; height: 445px;"></div><div id="cboxContent" style="float: left; width: 702px; height: 445px;"><div id="cboxTitle" style="float: left; display: block;">Me and my grandfather on the Ohoopee.</div><div id="cboxCurrent" style="float: left; display: block;">image 1 of 3</div><button type="button" id="cboxPrevious" style="display: block;">previous</button><button type="button" id="cboxNext" style="display: block;">next</button><button type="button" id="cboxSlideshow" style="display: none;">stop slideshow</button><div id="cboxLoadingOverlay" style="float: left; display: none;"></div><div id="cboxLoadingGraphic" style="float: left; display: none;"></div><button type="button" id="cboxClose">close</button></div><div id="cboxMiddleRight" style="float: left; height: 445px;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left; width: 702px;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; max-width: none; display: none;"></div></div>
+
+
+
+    <script>
+  		jQuery('a.gallery').colorbox();
+	</script>
+</body>
+</html>
