@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Honk&family=Rampart+One&display=swap" rel="stylesheet">
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="JQ/JQ/colorbox-master/colorbox-master/example1/colorbox.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="JQ/JQ/colorbox-master/colorbox-master/jquery.colorbox.js"></script>
+
+<script type="text/javascript">$(document).ready(function(){
+				//Examples of how to assign the Colorbox event to elements
+				//$(".group1").colorbox({rel:'group1, width:"75%", height:"75%"'});
+				$(".group2").colorbox({rel:'group2', transition:"fade"});
+				$(".group3").colorbox({rel:'group3', transition:"fade", width:"35%", height:"auto"});
+				//$(".group4").colorbox({rel:'group4', slideshow:true});
+				$(".ajax").colorbox();
+				//$(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390});
+				//$(".vimeo").colorbox({iframe:true, innerWidth:500, innerHeight:409});
+				//$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+				//$(".inline").colorbox({inline:true, width:"50%"});
+				$(".callbacks").colorbox({
+					onOpen:function(){ alert('onOpen: colorbox is about to open'); },
+					onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content'); },
+					onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content'); },
+					onCleanup:function(){ alert('onCleanup: colorbox has begun the close process'); },
+					onClosed:function(){ alert('onClosed: colorbox has completely closed'); }
+				});
+
+				//$('.non-retina').colorbox({rel:'group5', transition:'none'})
+				//$('.retina').colorbox({rel:'group5', transition:'none', retinaImage:true, retinaUrl:true});
+				
+				//Example of preserving a JavaScript event for inline calls.
+				/*$("#click").click(function(){ 
+					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+					return false;
+				});*/
+			});</script>
+
+	<style type="text/css">
+		
+		body{
+			margin: 0;
+		}
+		
+		h1{
+			margin: 0;
+
+			text-align: center;
+
+			font-family: "Honk", sans-serif;
+
+			font-size: 200px;
+
+			z-index: 5;
+
+			position: relative;
+
+			top: 6vh;
+		}
+
+		h2{
+			font-family: "Averia Sans Libre", sans-serif;
+
+			text-align: center;
+
+			font-size: 50px;
+
+			margin: 0;
+
+			color: white;
+		}
+
+		h3{
+			font-family: "Rampart One", sans-serif;
+			font-size: 60px;
+
+			height: 20vh;
+
+			line-height: 20vh;
+
+			color: white;
+		}
+
+		h4{
+			font-family: "Shadows Into Light", sans-serif;
+
+			font-size: 30px;
+
+			width: 70%;
+
+			margin: 0 auto;
+		}
+
+		img{
+			z-index: 5;
+		}
+
+		.subtitulo{
+			font-family: "Rampart One", sans-serif;
+
+			color: #9DBEF0;
+			font-size: 250px;
+			margin: 0;
+			letter-spacing: -30px;
+			position: relative;
+
+			top: -250px;
+			
+			height: 300px;
+
+			z-index: 0;
+
+
+		}
+
+		.portada{
+			background-color: #5496F8;
+
+			margin: 0;
+			padding: 10vh 0 0 0;
+
+			height: 45vh;
+		}
+
+		.linea1{
+			background-color: #5496F8;
+
+			margin: 30px 0;
+
+			height: 10vh;
+		}
+
+		.linea2{
+			background-color: #5496F8;
+
+			margin: 40px 0;
+
+			height: 7vh;
+		}
+
+		.linea3{
+			background-color: #5496F8;
+
+			margin: 50px 0;
+
+			height: 4vh;
+		}
+
+		.linea4{
+			background-color: #5496F8;
+
+			margin: 60px 0;
+
+			height: 3vh;
+		}
+
+		.linea5{
+			background-color: #5496F8;
+
+			margin: 60px 0;
+
+			height: 1vh;
+		}
+
+		.linea1-2{
+			background-color: #FBD135;
+
+			margin: 30px 0;
+
+			height: 10vh;
+		}
+
+		.linea2-2{
+			background-color: #FBD135;
+
+			margin: 40px 0;
+
+			height: 7vh;
+		}
+
+		.linea3-2{
+			background-color: #FBD135;
+
+			margin: 50px 0;
+
+			height: 4vh;
+		}
+
+		.linea4-2{
+			background-color: #FBD135;
+
+			margin: 60px 0;
+
+			height: 3vh;
+		}
+
+		.linea5-2{
+			background-color: #FBD135;
+
+			margin: 60px 0;
+
+			height: 1vh;
+		}
+
+		
+
+		.linea1-3{
+			background-color: #60649F;
+
+			margin: 30px 0;
+
+			height: 10vh;
+		}
+
+		.linea2-3{
+			background-color: #60649F;
+
+			margin: 40px 0;
+
+			height: 7vh;
+		}
+
+		.linea3-3{
+			background-color: #60649F;
+
+			margin: 50px 0;
+
+			height: 4vh;
+		}
+
+		.linea4-3{
+			background-color: #60649F;
+
+			margin: 60px 0;
+
+			height: 3vh;
+		}
+
+		.linea5-3{
+			background-color: #60649F;
+
+			margin: 60px 0;
+
+			height: 1vh;
+		}
+
+		.linea1-4{
+			background-color: #E0E875;
+
+			margin: 30px 0;
+
+			height: 10vh;
+		}
+		.linea3-4{
+			background-color: #E0E875;
+
+			margin: 50px 0;
+
+			height: 4vh;
+		}
+
+		.linea5-4{
+			background-color: #E0E875;
+
+			margin: 60px 0;
+
+			height: 1vh;
+		}
+
+		.graphicDes{
+			background-color: #FBD135;
+
+			height: 80vh;
+
+			text-align: center;
+
+
+		}
+
+		.posters{
+			display: inline-block;
+
+			line-height: 70vh;
+
+			width: 15%;
+
+			margin: 0.5%;
+
+			border: solid white 10px;
+
+			z-index: 3;
+		}
+
+
+		.drawing{
+			background-color: #60649F;
+
+			height: fit-content;
+
+			text-align: center;
+		}
+
+		.drawinggallery{
+			
+
+			width: 100%;
+
+			flex-wrap: wrap;
+
+			justify-content: center;
+
+			align-content: space-around;
+		}
+
+		.drawings{
+			flex-grow: 0.1;
+			margin: 3%;
+
+			border: solid white 30px;
+
+			display: none;
+
+
+		}
+
+		.drawings2{
+
+		}
+
+		#linkimg{
+			font-style: "Averia Sans Libre", sans-serif;
+
+			font-size: 50px;
+
+			color: white;
+
+			height: 20vh;
+
+
+		}
+
+		.videoed{
+			height: 70vh;
+
+			background-color: #E0E875;
+
+			text-align: center;
+		}
+
+		/*Top menu*/
+
+		.menutop{
+			height: 10vh;
+			width: 100%;
+
+			background-color: white;
+
+			text-align: center;
+
+			position: fixed;
+
+			z-index: 10;
+
+		}
+
+		li{
+			display: inline-block;
+
+			font-family: "Honk", sans-serif;
+
+			font-size: 60px;
+
+			margin: 0 10%;
+
+			
+		}
+
+		footer{
+
+			background-color: #2B2B2B;
+
+			height: 20vh;
+
+		}
+
+		#titulofooter{
+			font-size: 40px;
+
+			height: 10vh;
+			width: 20%;
+
+			margin: 0 auto;
+
+			margin-bottom: 5vh;
+		}
+
+		.name{
+			background-color: #515152;
+
+			width: 50%;
+
+			margin: 0 auto;
+
+			margin-bottom: 5vh;
+
+			border-radius: 5px;
+		}
+
+		.message{
+
+			background-color: #515152;
+
+			width: 50%;
+			height: 30vh;
+
+			margin: 0 auto;
+
+			margin-bottom: 5vh;
+
+			border-radius: 5px;
+
+		}
+
+		.sendbutton{
+
+			text-align: center;
+			width: 30%;
+			height: 5vh;
+			line-height: 54px;
+
+			border-radius: 54px;
+
+			font-family: "Averia Sans Libre", sans-serif;
+
+			font-size: 30px;
+
+			color: white;
+
+			background-color: #59C756;
+
+			margin: 0 auto;
+
+		
+		}
+
+		.redes{
+			
+		}
+
+
+
+
+		/*---------------Tablet---------------*/
+
+
+
+		@media (max-width: 768px){
+
+
+
+		
+		body{
+			margin: 0;
+		}
+		
+		h1{
+
+
+			margin: 0;
+
+			text-align: center;
+
+			font-family: "Honk", sans-serif;
+
+			font-size: 120px;
+
+			z-index: 5;
+
+			position: relative;
+
+			top: 6vh;
+			
+		}
+
+		h2{
+			font-family: "Averia Sans Libre", sans-serif;
+
+			text-align: center;
+
+			font-size: 30px;
+
+			margin: 0;
+
+			color: white;
+		}
+
+		h3{
+			font-family: "Rampart One", sans-serif;
+			font-size: 60px;
+
+			height: 20vh;
+
+			line-height: 10vh;
+
+			color: white;
+		}
+
+		h4{
+			font-family: "Shadows Into Light", sans-serif;
+
+			font-size: 30px;
+
+			width: 70%;
+
+			margin: 0 auto;
+		}
+
+		img{
+			z-index: 5;
+		}
+
+		.subtitulo{
+			font-family: "Rampart One", sans-serif;
+
+			color: #9DBEF0;
+			font-size: 130px;
+			margin: 0;
+			letter-spacing: -30px;
+			position: relative;
+
+			top: -110px;
+			
+			height: 300px;
+
+			z-index: 0;
+
+
+		}
+
+		.portada{
+			background-color: #5496F8;
+
+			margin: 0;
+			padding: 10vh 0 0 0;
+
+			height: 30vh;
+		}
+
+		.linea1{
+			background-color: #5496F8;
+
+			margin: 30px 0;
+
+			height: 10vh;
+		}
+
+		.linea2{
+			background-color: #5496F8;
+
+			margin: 40px 0;
+
+			height: 7vh;
+		}
+
+		.linea3{
+			background-color: #5496F8;
+
+			margin: 50px 0;
+
+			height: 4vh;
+		}
+
+		.linea4{
+			background-color: #5496F8;
+
+			margin: 60px 0;
+
+			height: 3vh;
+		}
+
+		.linea5{
+			background-color: #5496F8;
+
+			margin: 60px 0;
+
+			height: 1vh;
+		}
+
+		.linea1-2{
+			background-color: #FBD135;
+
+			margin: 30px 0;
+
+			height: 10vh;
+		}
+
+		.linea2-2{
+			background-color: #FBD135;
+
+			margin: 40px 0;
+
+			height: 7vh;
+		}
+
+		.linea3-2{
+			background-color: #FBD135;
+
+			margin: 50px 0;
+
+			height: 4vh;
+		}
+
+		.linea4-2{
+			background-color: #FBD135;
+
+			margin: 60px 0;
+
+			height: 3vh;
+		}
+
+		.linea5-2{
+			background-color: #FBD135;
+
+			margin: 60px 0;
+
+			height: 1vh;
+		}
+
+		
+
+		.linea1-3{
+			background-color: #60649F;
+
+			margin: 30px 0;
+
+			height: 10vh;
+		}
+
+		.linea2-3{
+			background-color: #60649F;
+
+			margin: 40px 0;
+
+			height: 7vh;
+		}
+
+		.linea3-3{
+			background-color: #60649F;
+
+			margin: 50px 0;
+
+			height: 4vh;
+		}
+
+		.linea4-3{
+			background-color: #60649F;
+
+			margin: 60px 0;
+
+			height: 3vh;
+		}
+
+		.linea5-3{
+			background-color: #60649F;
+
+			margin: 60px 0;
+
+			height: 1vh;
+		}
+
+		.linea1-4{
+			background-color: #E0E875;
+
+			margin: 30px 0;
+
+			height: 10vh;
+		}
+		.linea3-4{
+			background-color: #E0E875;
+
+			margin: 50px 0;
+
+			height: 4vh;
+		}
+
+		.linea5-4{
+			background-color: #E0E875;
+
+			margin: 60px 0;
+
+			height: 1vh;
+		}
+
+		.graphicDes{
+			background-color: #FBD135;
+
+			height: 70vh;
+
+			text-align: center;
+
+
+		}
+
+		.posters{
+			display: inline-block;
+
+			line-height: 70vh;
+
+			width: 12%;
+
+			margin: 0.5%;
+
+			border: solid white 10px;
+
+			z-index: 3;
+		}
+
+		
+
+
+		.drawing{
+			background-color: #60649F;
+
+			height: fit-content;
+
+			text-align: center;
+		}
+
+		.drawinggallery{
+			
+
+			width: 100%;
+
+			flex-wrap: wrap;
+
+			justify-content: center;
+
+			align-content: space-around;
+		}
+
+		.drawings{
+			flex-grow: 0.1;
+			margin: 3%;
+
+			border: solid white 30px;
+
+			display: none;
+
+
+		}
+
+		.drawings2{
+
+		}
+
+		#linkimg{
+			font-style: "Averia Sans Libre", sans-serif;
+
+			font-size: 50px;
+
+			color: white;
+
+			height: 20vh;
+
+
+		}
+
+		.videoed{
+			height: 125vh;
+
+			background-color: #E0E875;
+
+			text-align: center;
+		}
+
+		/*Top menu*/
+
+		.menutop{
+			height: 10vh;
+			width: 100%;
+
+			background-color: white;
+
+			text-align: center;
+
+			position: fixed;
+
+			z-index: 10;
+
+		}
+
+		ul{
+			margin: 0;
+		}
+
+		li{
+			display: inline-block;
+
+			font-family: "Honk", sans-serif;
+
+			font-size: 50px;
+
+			margin: 0 7%;
+
+			
+		}
+
+		footer{
+
+			background-color: #2B2B2B;
+
+			height: 70vh;
+
+		}
+
+		#titulofooter{
+			font-size: 30px;
+
+			height: 10vh;
+			width: 30%;
+
+			margin: 0 auto;
+
+			margin-bottom: 5vh;
+		}
+
+		.name{
+			background-color: #515152;
+
+			width: 50%;
+
+			margin: 0 auto;
+
+			margin-bottom: 5vh;
+
+			border-radius: 5px;
+		}
+
+		.message{
+
+			background-color: #515152;
+
+			width: 50%;
+			height: 30vh;
+
+			margin: 0 auto;
+
+			margin-bottom: 5vh;
+
+			border-radius: 5px;
+
+		.sendbutton{
+			text-align: center;
+			width: 20%;
+			height: 3vh;
+			line-height: 32px;
+
+			border-radius: 32px;
+
+			background-color: #74EB71;
+
+			margin: 0 auto;
+
+		
+		}
+
+		}
+		}
+
+
+		/*---------------Mobile---------------*/
+
+		@media (max-width: 375px){
+
+
+
+		
+		body{
+			margin: 0;
+		}
+		
+		h1{
+
+
+			margin: 0;
+
+			text-align: center;
+
+			font-family: "Honk", sans-serif;
+
+			font-size: 60px;
+
+			z-index: 5;
+
+			position: relative;
+
+			top: 6vh;
+			
+		}
+
+		h2{
+			font-family: "Averia Sans Libre", sans-serif;
+
+			text-align: center;
+
+			font-size: 30px;
+
+			margin: 0;
+
+			color: white;
+		}
+
+		h3{
+			font-family: "Rampart One", sans-serif;
+			font-size: 30px;
+
+			height: 20vh;
+
+			line-height: 5vh;
+
+			color: white;
+
+			margin: 0;
+			padding-top: 5vh;
+		}
+
+		h4{
+			font-family: "Shadows Into Light", sans-serif;
+
+			font-size: 20px;
+
+			width: 70%;
+
+			margin: 0 auto;
+		}
+
+		img{
+			z-index: 5;
+		}
+
+		.subtitulo{
+			font-family: "Rampart One", sans-serif;
+
+			color: #9DBEF0;
+			font-size: 60px;
+			margin: 0;
+			letter-spacing: -10px;
+			position: relative;
+
+			top: -40px;
+			
+			height: 300px;
+
+			z-index: 0;
+
+
+		}
+
+		.portada{
+			background-color: #5496F8;
+
+			margin: 0;
+			padding: 10vh 0 0 0;
+
+			height: 30vh;
+			width: 100%;
+		}
+
+		.linea1{
+			background-color: #5496F8;
+
+			margin: 10px 0;
+
+			height: 10vh;
+		}
+
+		.linea2{
+			background-color: #5496F8;
+
+			margin: 20px 0;
+
+			height: 7vh;
+		}
+
+		.linea3{
+			background-color: #5496F8;
+
+			margin: 25px 0;
+
+			height: 4vh;
+		}
+
+		.linea4{
+			background-color: #5496F8;
+
+			margin: 35px 0;
+
+			height: 2.5vh;
+		}
+
+		.linea5{
+			background-color: #5496F8;
+
+			margin: 40px 0;
+
+			height: 1vh;
+		}
+
+		.linea1-2{
+			background-color: #FBD135;
+
+			margin: 10px 0;
+
+			height: 10vh;
+		}
+
+	
+
+		.linea3-2{
+			background-color: #FBD135;
+
+			margin: 20px 0;
+
+			height: 4vh;
+		}
+
+
+		.linea5-2{
+			background-color: #FBD135;
+
+			margin: 10px 0;
+
+			height: 1vh;
+		}
+
+		
+
+		.linea1-3{
+			background-color: #60649F;
+
+			margin: 30px 0;
+
+			height: 10vh;
+		}
+
+		.linea2-3{
+			background-color: #60649F;
+
+			margin: 40px 0;
+
+			height: 7vh;
+		}
+
+		.linea3-3{
+			background-color: #60649F;
+
+			margin: 20px 0;
+
+			height: 4vh;
+		}
+
+		.linea4-3{
+			background-color: #60649F;
+
+			margin: 60px 0;
+
+			height: 3vh;
+		}
+
+		.linea5-3{
+			background-color: #60649F;
+
+			margin: 10px 0;
+
+			height: 1vh;
+		}
+
+		.linea1-4{
+			background-color: #E0E875;
+
+			margin: 30px 0;
+
+			height: 10vh;
+		}
+		.linea3-4{
+			background-color: #E0E875;
+
+			margin: 20px 0;
+
+			height: 4vh;
+		}
+
+		.linea5-4{
+			background-color: #E0E875;
+
+			margin: 10px 0;
+
+			height: 1vh;
+		}
+
+		.graphicDes{
+			background-color: #FBD135;
+
+			height: 70vh;
+
+			text-align: center;
+
+
+		}
+
+		.posters{
+			display: inline-block;
+
+			line-height: 70vh;
+
+			width: 12%;
+
+			margin: 0.5%;
+
+			border: solid white 10px;
+
+			z-index: 3;
+		}
+
+
+
+
+
+		.drawing{
+			background-color: #60649F;
+
+			height: fit-content;
+
+			text-align: center;
+		}
+
+		.drawinggallery{
+			
+
+			width: 100%;
+
+			flex-wrap: wrap;
+
+			justify-content: center;
+
+			align-content: space-around;
+		}
+
+		.drawings{
+			flex-grow: 0.1;
+			margin: 3%;
+
+			border: solid white 30px;
+
+			display: none;
+
+
+		}
+
+		.drawings2{
+
+		}
+
+		#linkimg{
+			text-decoration: none;
+
+			font-size: 40px;
+
+			color: white;
+
+			height: 20vh;
+
+
+		}
+
+		.videoed{
+			height: 105vh;
+
+			background-color: #E0E875;
+
+			text-align: center;
+		}
+
+		iframe{
+			width: 70%;
+			height: 25vh;
+		}
+
+		/*Top menu*/
+
+		.menutop{
+			height: 6vh;
+			width: 100%;
+
+			background-color: white;
+
+			text-align: center;
+
+			position: fixed;
+
+			z-index: 10;
+
+		}
+
+		ul{
+			margin: 0;
+			padding: 0;
+		}
+
+		li{
+			display: inline-block;
+
+			font-family: "Honk", sans-serif;
+
+			font-size: 30px;
+
+			margin: 0 5%;
+
+			
+		}
+
+		footer{
+
+			background-color: #2B2B2B;
+
+			height: 10vh;
+
+		}
+
+		#titulofooter{
+			font-size: 30px;
+
+			height: 10vh;
+			width: 50%;
+
+			margin: 0 auto;
+
+			margin-bottom: 5vh;
+		}
+
+		
+
+		}
+
+
+
+
+	</style>
+
+
+
+
+
+</head>
+<body>
+
+	<div class="menutop">
+		<ul>
+			<li><a href="#" style="text-decoration:none;">Top</a></li>
+			<li><a href="#" style="text-decoration:none;">About</a></li>
+			<li><a href="#titulofooter" style="text-decoration:none;">Contact</a></li>
+		</ul>
+	</div>
+
+	<div class="portada">
+
+		<h2>Este es mi</h2>
+		<h1>Portfolio</h1>
+		<h1 class="subtitulo">ポートフォリオ</h1>
+
+	</div>
+
+	<div class="linea1"></div>
+	<div class="linea2"></div>
+	<div class="linea3"></div>
+	<div class="linea4"></div>
+	<div class="linea5"></div>
+
+	<h4>¡Hola! </h4>
+
+	<h4>Soy Rubén</h4>
+
+	<h4>Considero que soy una persona creativa, ya que me gusta el diseño gráfico, la edición y el montaje de vídeo, el dibujo y la animación.</h4>
+
+	<h4>Manejo diversos programas, como After Effects, Photoshop, Premiere pro, DaVinci Resolve, Affinity y más.</h4>
+
+	<div class="linea5-2"></div>
+	<div class="linea3-2"></div>
+	<div class="linea1-2"></div>
+
+	<div class="graphicDes">
+		
+		<h3 >El diseño gráfico es mi pasión</h3>
+
+		
+		<a class="group3" href="MIDRA POSTER.png"><img src="MIDRA POSTER.png" class="posters" style="width: 20%;"></a>
+
+		
+
+		<a class="group3" href="MiniCollage.jpg"><img src="MiniCollage.jpg" class="posters" style="width: 20%;"></a>
+
+		<a class="group3" href="https://i.pinimg.com/736x/63/5b/0b/635b0b4e726afbafe439fc16db50e05f.jpg">
+
+			<img src="https://i.pinimg.com/736x/63/5b/0b/635b0b4e726afbafe439fc16db50e05f.jpg" class="posters">
+		</a>
+
+		<a class="group3" href="https://i.pinimg.com/736x/ae/82/e8/ae82e864e120d00ffc1c1019476599df.jpg" class="posters"><img src="https://i.pinimg.com/736x/ae/82/e8/ae82e864e120d00ffc1c1019476599df.jpg" class="posters"></a>
+
+		<a class="group3" href="Do Your Own Thing (ft.JimCarrey).png"><img src="Do Your Own Thing (ft.JimCarrey).png" class="posters"></a>
+
+		
+
+	</div>
+
+	<div class="linea1-2"></div>
+	<div class="linea3-2"></div>
+	<div class="linea5-2"></div>
+
+	<div class="linea5-3"></div>
+	<div class="linea3-3"></div>
+	<div class="linea1-3"></div>
+
+	<div class="drawing">
+		
+		<h3>Dibujo</h3>
+
+		<div class="drawinggallery">
+
+			<a class="group2" href="https://i.pinimg.com/736x/a3/65/bf/a365bff5d948f4898d04069bc504c502.jpg" class="drawings2">
+
+				<img src="https://i.pinimg.com/736x/a3/65/bf/a365bff5d948f4898d04069bc504c502.jpg" class="drawings" >
+
+				<p id="linkimg">Clik aquí para ver algunos dibujos</p>
+
+			</a>
+
+			<a class="group2" href="https://i.pinimg.com/736x/bd/29/58/bd2958dca0fdc307fb61a0b50f9d3ad0.jpg" class="drawings2"><img src="https://i.pinimg.com/736x/bd/29/58/bd2958dca0fdc307fb61a0b50f9d3ad0.jpg" class="drawings"></a>
+
+			<a class="group2" href="https://i.pinimg.com/736x/5f/44/fb/5f44fbfb35bd615d53145c78334bc029.jpg" class="drawings2"><img src="https://i.pinimg.com/736x/5f/44/fb/5f44fbfb35bd615d53145c78334bc029.jpg" class="drawings"></a>
+
+			<a class="group2" href="https://i.pinimg.com/736x/9d/aa/e8/9daae8420875cb888f4c3eb6cef3d9d3.jpg" class="drawings2"><img src="https://i.pinimg.com/736x/9d/aa/e8/9daae8420875cb888f4c3eb6cef3d9d3.jpg" class="drawings"></a>
+
+			<a class="group2" href="https://i.pinimg.com/736x/c9/ef/ad/c9efadddefcfd38d398ad8c178d775c8.jpg" class="drawings2"><img src="https://i.pinimg.com/736x/c9/ef/ad/c9efadddefcfd38d398ad8c178d775c8.jpg" class="drawings"></a>
+
+			<a class="group2" href="https://i.pinimg.com/736x/22/a8/bf/22a8bfe9b156c90edf281e044cbbdba2.jpg" class="drawings2"><img src="https://i.pinimg.com/736x/22/a8/bf/22a8bfe9b156c90edf281e044cbbdba2.jpg" class="drawings"></a>
+		</div>
+
+		
+
+	</div>
+
+	<div class="linea1-3"></div>
+	<div class="linea3-3"></div>
+	<div class="linea5-3"></div>
+
+
+
+	<div class="linea5-4"></div>
+	<div class="linea3-4"></div>
+	<div class="linea1-4"></div>
+
+	<div class="videoed">
+
+		<h3>Edición de Vídeo</h3>
+
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/wNMzvyltTB0?si=2i--e2Z7PHcORoeG&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/GgVxPtaVcaA?si=iieeshmETSOY_x8u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/71SRdmBBKFA?si=52geQ9eowAA9d0e5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+	</div>
+
+	<div class="linea1-4"></div>
+	<div class="linea3-4"></div>
+	<div class="linea5-4"></div>
+
+
+	<footer>
+
+		<!--<h3 id="titulofooter">Contact me</h3>
+
+		<div class="name">
+			<h4 style="color: white; width: 90%;">Name</h4>
+		</div>
+
+		<div class="message">
+			<h4 style="color: white; width: 90%;">Message</h4>
+		</div>
+
+		<div class="sendbutton">Send</div>-->
+
+		
+	</footer>
+	
+
+</body>
+</html>
